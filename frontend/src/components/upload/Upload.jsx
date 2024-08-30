@@ -1,11 +1,11 @@
 import { IKContext, IKUpload } from "imagekitio-react";
 import { useRef } from "react";
 
-const urlEndpoint = import.meta.env.VITE_IMAGE_KIT_ENDPOINT;
-const publicKey = import.meta.env.VITE_IMAGE_KIT_PUBLIC_KEY;
+const urlEndpoint = "https://ik.imagekit.io/Kshitij51";
+const publicKey = "public_ghaiC9KvOZdO98OFCY0qNW4QyrA=";
 const authenticator = async () => {
   try {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/upload`);
+    const response = await fetch(`/api/upload`);
 
     if (!response.ok) {
       const errorText = await response.text();

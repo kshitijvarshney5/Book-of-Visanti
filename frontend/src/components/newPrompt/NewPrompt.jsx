@@ -39,7 +39,7 @@ const NewPrompt = ({ data }) => {
 
   const mutation = useMutation({
     mutationFn: () => {
-      return fetch(`${import.meta.env.VITE_API_URL}/api/chats/${data._id}`, {
+      return fetch(`/api/chats/${data._id}`, {
         method: "PUT",
         credentials: "include",
         headers: {
@@ -120,7 +120,7 @@ const NewPrompt = ({ data }) => {
       {img.isLoading && <div className="loader">loading...</div>}
       {img.dbData?.filePath && (
         <IKImage
-          urlEndpoint={import.meta.env.VITE_IMAGE_KIT_ENDPOINT}
+          urlEndpoint={"https://ik.imagekit.io/Kshitij51"}
           path={img.dbData?.filePath}
           width="380"
           height="380"

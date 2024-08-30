@@ -8,14 +8,14 @@ const ChatList = () => {
   const { isPending, error, data } = useQuery({
     queryKey: ["userChats"],
     queryFn: () =>
-      fetch(`${import.meta.env.VITE_API_URL}/api/userchats`, {
+      fetch(`/api/userchats`, {
         credentials: "include",
       }).then((res) => res.json()),
   });
 
   const deleteChatMutation = useMutation({
     mutationFn: (chatId) =>
-      fetch(`${import.meta.env.VITE_API_URL}/api/chats/${chatId}`, {
+      fetch(`/api/chats/${chatId}`, {
         method: "DELETE",
         credentials: "include",
       }),

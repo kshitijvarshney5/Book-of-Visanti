@@ -11,7 +11,7 @@ const ChatPage = () => {
   const { isPending, error, data } = useQuery({
     queryKey: ["chat", chatId],
     queryFn: () =>
-      fetch(`${import.meta.env.VITE_API_URL}/api/chats/${chatId}`, {
+      fetch(`/api/chats/${chatId}`, {
         credentials: "include",
       }).then((res) => res.json()),
   });
@@ -28,7 +28,7 @@ const ChatPage = () => {
                 <>
                   {message.img && (
                     <IKImage
-                      urlEndpoint={import.meta.env.VITE_IMAGE_KIT_ENDPOINT}
+                      urlEndpoint={"https://ik.imagekit.io/Kshitij51"}
                       path={message.img}
                       height="300"
                       width="400"
